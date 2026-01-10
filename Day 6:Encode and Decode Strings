@@ -1,0 +1,29 @@
+class Solution {
+public:
+
+    string encode(vector<string>& strs) {
+    string g;
+    for (const auto& a : strs) {
+        
+        g = g + a;
+        g = g + ".";
+    }
+    return g;
+}
+     vector<string> decode(string s) {
+    vector<string>k;
+    string a;
+    for (int i = 0; i < s.size(); i++) {
+        if (s[i] != '.') {
+            a = a + s[i];
+        }
+        else {
+            k.push_back(a);
+        }
+        if (s[i] == '.') {
+            a = "";
+        }
+    }
+    return k;
+     }
+};
